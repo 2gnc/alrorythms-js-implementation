@@ -1,4 +1,3 @@
-console.log('=== fizzBuzzV1 ===');
 const fzbz = (i) => {
   if (i % 15 === 0) {
     return 'FizzBuzz';
@@ -16,7 +15,7 @@ const fizzBuzz = () => {
 };
 fizzBuzz();
 
-console.log('=== fizzBuzzV2 ===');
+
 const fizzBuzzV3 = (num) => {
   for (let i = 0; i <= num; i++) {
     let str = '';
