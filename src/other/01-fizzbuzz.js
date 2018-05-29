@@ -16,13 +16,14 @@ const fizzBuzz = () => {
 fizzBuzz();
 
 
-const fizzBuzzV3 = (num) => {
+const fizzBuzzV2 = (num) => {
   for (let i = 0; i <= num; i++) {
     let str = '';
-    if (i % 3 === 0) {
+    if (i % 15 === 0) {
+      str = 'FizzBuzz';
+    } else if (i % 3 === 0) {
       str = 'Fizz';
-    }
-    if (i % 5 === 0) {
+    } else if (i % 5 === 0) {
       str += 'Buzz';
     }
     if (str === '') {
@@ -31,5 +32,5 @@ const fizzBuzzV3 = (num) => {
     console.log(str);
   }
 };
-fizzBuzzV3(20);
+fizzBuzzV2(20);
 

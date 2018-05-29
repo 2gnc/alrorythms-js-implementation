@@ -6,6 +6,10 @@
     "lint": "eslint ./src/*",
     "test": "jest"
   },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+  },
   "repository": "git@github.com:2gnc/alrorythms-js-implementation.git",
   "author": "Ksenia Polyakova <polyakova.kse@yandex.ru>",
   "license": "MIT",

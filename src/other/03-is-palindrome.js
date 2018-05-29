@@ -1,8 +1,13 @@
 const isPalindromeV1 = (string) => {
-  let isPalindrome = true;
   const strArr = string.toLowerCase().split('');
-  console.log(strArr);
-  return isPalindrome;
+  const lettersArr = [];
+  const validChar = 'qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъфывапролджэячсмитьбюё'.split('');
+
+  strArr.forEach((char) => {
+    if (validChar.includes(char)) lettersArr.push(char);
+  });
+
+  return lettersArr.join('') === lettersArr.reverse().join('');
 };
 
 isPalindromeV1('Madam, I`m Adam');
