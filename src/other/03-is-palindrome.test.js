@@ -1,6 +1,6 @@
 const p = require('./03-is-palindrome');
 
-describe('Версия 2', () => {
+describe('Палиндром версия 2', () => {
   it('level', () => {
     expect(p.v2('level')).toBe(true);
   });
@@ -43,7 +43,7 @@ describe('Версия 2', () => {
 });
 
 
-describe('Версия 1', () => {
+describe('Палиндром версия 1', () => {
   it('level', () => {
     expect(p.v1('level')).toBe(true);
   });
