@@ -42,8 +42,6 @@ const meanMedianMode = arr => ({
   mode: getMode(arr),
 });
 
-const abc = meanMedianMode([1, 1, 1]);
-console.log(abc);
 module.exports.meanObj = meanMedianMode;
 module.exports.mean = getMean;
 module.exports.median = getMedian;
