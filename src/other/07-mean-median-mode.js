@@ -1,18 +1,50 @@
-const getMean = arr => {
-  return (arr.reduce((prev, next) => (prev + next)) / arr.length);
-};
+const getMean = arr => (arr.reduce((prev, next) => (prev + next)) / arr.length);
+
 const getMedian = arr => {
   const sortedArr = arr.sort((a, b) => a - b);
-  return sortedArr;
+  let middle;
+  if (sortedArr.length % 2 === 0) {
+    const a = (sortedArr.length / 2) - 1;
+    const b = (sortedArr.length / 2);
+    middle = (sortedArr[a] + sortedArr[b]) / 2;
+  } else {
+    middle = sortedArr[Math.round(sortedArr.length - 1) / 2];
+  }
+  return middle;
 };
-const getModule = (arr) => {
-  return 1;
+
+const getMode = arr => {
+  const obj = {};
+  arr.forEach(el => {
+    if (!obj[el]) obj[el] = 0;
+    obj[el]++;
+  });
+
+  let max = 0;
+  let maxArr = [];
+
+  Object.entries(obj).forEach(entry => {
+    if (entry[1] > max) {
+      [max] = [entry[1]];
+      maxArr = [entry[0]];
+    } else if (entry[1] === max) {
+      maxArr.push(entry[0]);
+    }
+    if (maxArr.length === Object.entries(obj).length) maxArr = [];
+  });
+
+  return maxArr;
 };
-const meanMedianModule = arr => ({
+
+const meanMedianMode = arr => ({
   mean: getMean(arr),
   median: getMedian(arr),
-  module: getModule(arr),
+  mode: getMode(arr),
 });
 
-const abc = meanMedianModule([6, 2, 1, 4, 5, 3]);
+const abc = meanMedianMode([1, 1, 1]);
 console.log(abc);
+module.exports.meanObj = meanMedianMode;
+module.exports.mean = getMean;
+module.exports.median = getMedian;
+module.exports.mode = getMode;

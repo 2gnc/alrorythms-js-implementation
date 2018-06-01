@@ -27,4 +27,5 @@ module.exports.sort = mergeSort;
 module.exports.merge = merge;
 
 // O(logN)
+// вспомогательное O(n)
 
