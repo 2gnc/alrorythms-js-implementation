@@ -17,9 +17,11 @@ const mergeSort = arr => {
     return arr;
   }
   const middle = Math.round(arr.length / 2);
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
   return merge(
-    mergeSort(arr.slice(0, middle)),
-    mergeSort(arr.slice(middle)),
+    mergeSort(left),
+    mergeSort(right),
   );
 };
 
