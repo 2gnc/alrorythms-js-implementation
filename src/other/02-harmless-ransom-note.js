@@ -28,12 +28,12 @@ const harmlessRansomNoteV2 = (noteText, magazineText) => {
   const magObj = {};
   let noteIsPossible = true;
 
-  magArr.forEach((word) => {
+  magArr.forEach(word => {
     if (!magObj[word]) magObj[word] = 0;
     magObj[word]++;
   });
 
-  noteArr.forEach((word) => {
+  noteArr.forEach(word => {
     if (magObj[word]) {
       magObj[word]--;
       if (magObj[word] < 0) {
@@ -49,5 +49,5 @@ const harmlessRansomNoteV2 = (noteText, magazineText) => {
 module.exports.hn1 = harmlessRansomNoteV1;
 module.exports.hn2 = harmlessRansomNoteV2;
 
-// сложность v1 O(n * m) в худшем случае
-// сложность v2 O(n + m) в худшем случае
+// сложность v1 O(n * m)
+// сложность v2 O(n + m)
