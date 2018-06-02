@@ -1,4 +1,4 @@
-const fzbz = (i) => {
+const fzbz = i => {
   if (i % 15 === 0) {
     return 'FizzBuzz';
   } else if (i % 3 === 0) {
@@ -16,7 +16,7 @@ const fizzBuzz = () => {
 fizzBuzz();
 
 
-const fizzBuzzV2 = (num) => {
+const fizzBuzzV2 = num => {
   for (let i = 0; i <= num; i++) {
     let str = '';
     if (i % 15 === 0) {
