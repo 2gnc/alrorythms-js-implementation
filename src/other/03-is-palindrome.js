@@ -1,15 +1,15 @@
-const isPalindromeV1 = (string) => {
+const isPalindromeV1 = string => {
   const strArr = string.toLowerCase().split('');
   const lettersArr = [];
   const validChar = 'qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъфывапролджэячсмитьбюё'.split('');
 
-  strArr.forEach((char) => {
+  strArr.forEach(char => {
     if (validChar.includes(char)) lettersArr.push(char);
   });
   return lettersArr.join('') === lettersArr.reverse().join('');
 };
 
-const isPalindromeV2 = (string) => {
+const isPalindromeV2 = string => {
   const strArr = string.toLowerCase().split('');
   const validChar = 'qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъфывапролджэячсмитьбюё'.split('');
 
