@@ -13,3 +13,4 @@ const binarySearch = (arr, num) => {
 };
 
 module.exports = binarySearch;
+// O(logN)
