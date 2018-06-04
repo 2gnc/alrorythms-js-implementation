@@ -21,7 +21,6 @@ const sieveOfEratosthenes = n => {
   return result;
 };
 
-console.log(sieveOfEratosthenes(49));
 module.exports = sieveOfEratosthenes;
 
 // O(n);
