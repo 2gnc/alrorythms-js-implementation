@@ -14,6 +14,6 @@ describe('бинарный поиск', () => {
     expect(bin([], 3)).not.toBeTruthy();
   });
   it('массив из одного элемента', () => {
-    expect(bin([3], 3)).not.toBeTruthy();
+    expect(bin([3], 3)).toBeTruthy();
   });
 });
