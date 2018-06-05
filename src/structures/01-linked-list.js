@@ -119,11 +119,23 @@ LinkedList.prototype.reverse = function () {
   }
 };
 
-const ll = new LinkedList();
-ll.addToHead(100);
-ll.addToHead(200);
-ll.addToHead(300);
-ll.addToHead(400);
-ll.print();
-ll.reverse();
-ll.print();
+/**
+ * @description находит индексы указанного значения
+ * @param {*} val что ищем
+ * @returns {Array.<Number>} массив с номерами индексов найденных ключей
+ * или пустой массив если ничего не найдено
+ */
+LinkedList.prototype.idxOf = function (val) {
+  const arr = [];
+  let index = 0;
+  let curNode = this.head;
+  while (curNode) {
+    if (curNode.value === val) arr.push(index);
+    curNode = curNode.next;
+    index++;
+  }
+  return arr;
+};
+
+module.exports.List = LinkedList;
+module.exports.Node = Node;
