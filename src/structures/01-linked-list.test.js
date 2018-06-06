@@ -109,7 +109,7 @@ describe('поиск в связанном списке', () => {
     list.addToTail(2);
     list.addToTail(3);
     const result = list.search(4);
-    expect(result).toBe(null);
+    expect(result).toBe(false);
   });
   it('поиск того, чего есть', () => {
     const list = new ll.List();
@@ -117,7 +117,7 @@ describe('поиск в связанном списке', () => {
     list.addToTail(2);
     list.addToTail(3);
     const result = list.search(3);
-    expect(result).toBe(3);
+    expect(result).toBe(true);
   });
 });
 
@@ -153,5 +153,27 @@ describe('поиск индексов', () => {
     list.addToHead(2);
     const x = list.idxOf(2);
     expect(x).toEqual([0, 1]);
+  });
+});
+
+describe('добавление в середину', () => {
+  it('вставка в хвост', () => {
+    const list = new ll.List();
+    list.addToHead(1);
+    list.addToHead(2);
+    list.addToHead(3);
+    const node = list.nodeAt(2);
+    list.addAfter(node, 55);
+    expect(list.tail.value).toEqual(55);
+  });
+});
+
+describe('узел по номеру', () => {
+  it('узел есть', () => {
+    const list = new ll.List();
+    list.addToHead(1);
+    list.addToHead(2);
+    list.addToHead(3);
+    expect(list.nodeAt(0).value).toBe(3);
   });
 });

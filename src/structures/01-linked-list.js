@@ -79,6 +79,18 @@ LinkedList.prototype.removeTail = function () {
 };
 
 /**
+ * @description добавляет новый узел после указанного
+ * @param {Object.Node} node узел, после которого нужно добавить новый
+ * @param {*} value значение нового узла
+ */
+LinkedList.prototype.addAfter = function (node, value) {
+  const newNode = new Node(value, node.next, node);
+  if (node.next) node.next.prev = newNode;
+  node.next = newNode;
+  if (!newNode.next) this.tail = newNode;
+};
+
+/**
  * @description ищет указанное значение в узлах списка с начала
  * @param {*} searchValue что нужно найти
  * @returns {searchValue||null}
@@ -86,10 +98,10 @@ LinkedList.prototype.removeTail = function () {
 LinkedList.prototype.search = function (searchValue) {
   let currentNode = this.head;
   while (currentNode) {
-    if (currentNode.value === searchValue) return currentNode.value;
+    if (currentNode.value === searchValue) return true;
     currentNode = currentNode.next;
   }
-  return null;
+  return false;
 };
 
 /**
@@ -135,6 +147,22 @@ LinkedList.prototype.idxOf = function (val) {
     index++;
   }
   return arr;
+};
+
+/**
+ * @description возвращает узел по его номеру от начала
+ * @param {Number} index
+ * @returns {Object.Node||null}
+ */
+LinkedList.prototype.nodeAt = function (index) {
+  let currNode = this.head;
+  let count = 0;
+  while (currNode) {
+    if (count === index) return currNode;
+    currNode = currNode.next;
+    count++;
+  }
+  return null;
 };
 
 module.exports.List = LinkedList;
