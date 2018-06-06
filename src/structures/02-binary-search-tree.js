@@ -1,9 +1,17 @@
+/**
+ * @description создает узел/дерево
+ * @param {*} value содержимое узла
+ */
 function BST(value) {
   this.value = value;
   this.left = null;
   this.right = null;
 }
 
+/**
+ * @description добавляет узел в дерево
+ * @param {*} value содержимое узла
+ */
 BST.prototype.insert = function (value) {
   if (value <= this.value) {
     if (!this.left) {
@@ -20,6 +28,10 @@ BST.prototype.insert = function (value) {
   }
 };
 
+/**
+ * @description проверяет, есть ли узел в дереве
+ * @param {*} value узел
+ */
 BST.prototype.contains = function (value) {
   let result = false;
   if (value === this.value) result = true;
@@ -45,6 +57,10 @@ BST.prototype.deepFirstTraverse = function (iteratorFunc, order) {
   if (order === 'past-order') iteratorFunc(this.value);
 };
 
+/**
+ * @description  обходит дерево в ширину
+ * @param {Function} iteratorFunc функция, которая будет вызвана для каждого узла
+ */
 BST.prototype.levelTraverse = function (iteratorFunc) {
   const queue = [this];
   while (queue.length) {
