@@ -93,7 +93,7 @@ LinkedList.prototype.addAfter = function (node, value) {
 /**
  * @description ищет указанное значение в узлах списка с начала
  * @param {*} searchValue что нужно найти
- * @returns {searchValue||null}
+ * @returns {Boolean}
  */
 LinkedList.prototype.search = function (searchValue) {
   let currentNode = this.head;
