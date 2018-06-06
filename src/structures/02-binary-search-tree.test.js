@@ -80,7 +80,20 @@ describe('обход в глубину от меньшего к большему
     tree.insert(45);
     tree.insert(40);
     tree.insert(47);
-    tree.deepFirstTraverse(mock);
+    tree.deepFirstTraverse(mock, 'pre-order');
+    expect(mock.mock.calls.length).toBe(5);
+  });
+});
+
+describe('обход в ширину', () => {
+  it('обойти дерево из 5 узлов - число вызовов 5', () => {
+    const mock = jest.fn();
+    const tree = new BST(50);
+    tree.insert(55);
+    tree.insert(45);
+    tree.insert(40);
+    tree.insert(47);
+    tree.levelTraverse(mock, 'pre-order');
     expect(mock.mock.calls.length).toBe(5);
   });
 });
