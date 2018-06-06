@@ -97,3 +97,22 @@ describe('обход в ширину', () => {
     expect(mock.mock.calls.length).toBe(5);
   });
 });
+
+describe('максимальное и минимальное значение', () => {
+  it('минимальное', () => {
+    const tree = new BST(50);
+    tree.insert(55);
+    tree.insert(45);
+    tree.insert(40);
+    tree.insert(47);
+    expect(tree.getMin()).toBe(40);
+  });
+  it('максимальное', () => {
+    const tree = new BST(50);
+    tree.insert(55);
+    tree.insert(45);
+    tree.insert(40);
+    tree.insert(47);
+    expect(tree.getMax()).toBe(55);
+  });
+});

@@ -71,16 +71,21 @@ BST.prototype.levelTraverse = function (iteratorFunc) {
   }
 };
 
+BST.prototype.getMin = function () {
+  let min = Infinity;
+  this.deepFirstTraverse(node => {
+    if (node < min) min = node;
+  }, 'in-order');
+  return min;
+};
 
-const tree = new BST(50);
-tree.insert(55);
-tree.insert(45);
-tree.insert(40);
-tree.insert(47);
-tree.insert(70);
-tree.insert(15);
-tree.levelTraverse(val => {console.log(val.value)});
-
+BST.prototype.getMax = function () {
+  let max = -Infinity;
+  this.deepFirstTraverse(node => {
+    if (node > max) max = node;
+  }, 'in-order');
+  return max;
+};
 
 module.exports = BST;
 
