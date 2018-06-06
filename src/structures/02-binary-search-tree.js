@@ -72,19 +72,13 @@ BST.prototype.levelTraverse = function (iteratorFunc) {
 };
 
 BST.prototype.getMin = function () {
-  let min = Infinity;
-  this.deepFirstTraverse(node => {
-    if (node < min) min = node;
-  }, 'in-order');
-  return min;
+  if (this.left) return this.left.getMin();
+  return this.value;
 };
 
 BST.prototype.getMax = function () {
-  let max = -Infinity;
-  this.deepFirstTraverse(node => {
-    if (node > max) max = node;
-  }, 'in-order');
-  return max;
+  if (this.right) return this.right.getMin();
+  return this.value;
 };
 
 module.exports = BST;
